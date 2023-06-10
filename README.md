@@ -28,6 +28,10 @@ YOOKASSA_TOKEN='your_yookassa_provider_token'
 python3 donate_bot.py
 ```
 
+Протестировать бот можно здесь: [@kruser_donates_bot](https://t.me/kruser_donates_bot)  
+Для тестирования платежа используйте тестовую карту
+`1111 1111 1111 1026`, `12/22`, CVC `000`
+
 ## Цель проекта
 
 Код написан для выполнения тестового задания на должность 'Python Developer'.  
