@@ -78,14 +78,14 @@ def donate(message):
 
 @bot.callback_query_handler(func=lambda call: True)
 def callback_query(call):
-
-    if call.data == 'close':
+    """Обработка InlineKeyboard"""
+    if call.data == 'close':  # кнопка 'Закрыть'
         bot.delete_message(
             chat_id=call.from_user.id,
             message_id=call.message.message_id
         )
         
-    elif call.data.startswith('change_currency_'):
+    elif call.data.startswith('change_currency_'):  # кнопка 'Сменить валюту'
         current_currency = call.data.split('_')[-1]
         currency = 'USD' if current_currency == 'RUB' else 'RUB'
         bot.edit_message_reply_markup(
@@ -94,7 +94,7 @@ def callback_query(call):
             reply_markup=keyboard(currency)
         )
         
-    elif call.data.startswith('summa_'):
+    elif call.data.startswith('summa_'):  # формирование счета на оплату на выбранную сумму
         _, summa, currency = call.data.split('_')
         if currency == 'USD':
             summa = int(summa) * RUB_USD
