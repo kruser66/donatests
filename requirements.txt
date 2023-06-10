@@ -1,0 +1,2 @@
+pyTelegramBotAPI==4.12.*
+environs==9.5.*
